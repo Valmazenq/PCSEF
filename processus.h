@@ -14,7 +14,7 @@ struct processus {
   int32_t PID;
   char nom[20];
   enum etat etat;
-  int32_t registres[5];
+  int32_t *registres[5];
   int32_t pile[TAILLE_PILE];
 };
 

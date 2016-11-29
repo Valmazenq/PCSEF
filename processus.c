@@ -24,6 +24,7 @@ void init_process(void) {
   idleP.etat = ELU;
   proc1P.PID = 1;
   proc1P.etat = ACTIVABLE;
-  idleP.registres[0] = (int32_t)idle;
+  proc1P.registres[0] = &proc1P.pile[0];
+  proc1P.pile[0] = (int)proc1;
   
 }
