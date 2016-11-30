@@ -2,6 +2,7 @@
 #include <inttypes.h>
 #include "gestion_ecran.h"
 #include "gestion_temps.h"
+#include "processus.h"
 #include "stdio.h"
 
 extern void traitant_IT_32(void);
@@ -30,7 +31,9 @@ void kernel_start(void)
   efface_ecran();
   init_traitant_IT(32,traitant_IT_32);
   masque_IRQ(0,false);
-  sti();
+  //sti();
+  init_process();
+  idle();
   
   
   // on ne doit jamais sortir de kernel_start
